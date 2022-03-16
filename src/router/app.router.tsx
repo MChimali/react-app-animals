@@ -6,12 +6,8 @@ export const AppRouter: React.FC = () => {
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<AnimalDisplayContainer list="perros" />} />
-        <Route
-          path="/dogs"
-          element={<AnimalDisplayContainer list="perros" />}
-        />
-        <Route path="/cats" element={<AnimalDisplayContainer list="gatos" />} />
+        <Route path="/" element={<AnimalDisplayContainer />} />
+        <Route path="/:animal" element={<AnimalDisplayContainer />} />
       </Routes>
     </HashRouter>
   );

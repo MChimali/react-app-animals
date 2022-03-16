@@ -1,5 +1,4 @@
 import React from "react";
-import { cartFlagContext } from "./cart.toggle.context";
 
 interface Props {}
 

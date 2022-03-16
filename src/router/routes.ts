@@ -1,13 +1,21 @@
+import { generatePath } from "react-router-dom";
+
 interface SwitchRoutes {
   root: string;
-  cats: string;
-  dogs: string;
+  animal: string;
 }
 
 export const switchRoutes: SwitchRoutes = {
   root: "/",
-  cats:"/cats",
-  dogs:"/dogs"
+  animal: "/:animal",
 };
 
+interface LinkRoutes extends Omit<SwitchRoutes, "animal"> {
+  animal: (id: string) => string;
+}
 
+export const linkRoutes: LinkRoutes = {
+  ...switchRoutes,
+  animal: (animal: string) =>
+    generatePath(switchRoutes.animal, { animal }),
+};

@@ -1,9 +1,10 @@
 import React from "react";
-import { LinkToLists } from "./components";
+import { LinkToLists, AnimalOptions } from "./components";
 import { makeStyles } from "@material-ui/core/styles";
-import { CropLandscapeSharp } from "@material-ui/icons";
+import { PictureInfo } from "./api/api.model";
+
 interface Props {
-  list: any;
+  list: PictureInfo[];
 }
 
 const useStyles = makeStyles(() => ({
@@ -18,7 +19,7 @@ export const AnimalDisplayComponent: React.FC<Props> = (props) => {
     <>
       <div className={classes.flexItems}>
         <LinkToLists />
-        <h1>{list}</h1>
+        <AnimalOptions list={list} />
       </div>
     </>
   );
