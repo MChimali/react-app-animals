@@ -22,10 +22,9 @@ interface Props {
 }
 
 export const AnimalOptions: React.FC<Props> = (props) => {
-  const { cartList, setCartList } = React.useContext(cartListContext);
+  const { cartList } = React.useContext(cartListContext);
   const { list } = props;
   const classes = useStyles();
-  console.log(cartList)
 
   return (
     <>
@@ -34,7 +33,13 @@ export const AnimalOptions: React.FC<Props> = (props) => {
           <div className={classes.card} key={item.id}>
             <img src={item.picUrl} style={{ width: "7rem" }} />
             <div>{item.title}</div>
-            <CheckBox key={item.title} animal={item} flag={cartList.some((el) => el.title === item.title)}/>
+            
+            <CheckBox
+              key={item.title}
+              animal={item}
+              flag={cartList.some((el) => el.title === item.title)}
+            />
+            {/* {console.log("vamos a ver",cartList.some((el) => el.title === item.title))} */}
           </div>
         ))}
       </div>
