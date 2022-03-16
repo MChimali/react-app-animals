@@ -18,7 +18,6 @@ export const AnimalDisplayComponent: React.FC<Props> = (props) => {
   return (
     <>
       <div className={classes.flexItems}>
-        <LinkToLists />
         <AnimalOptions list={list} />
       </div>
     </>

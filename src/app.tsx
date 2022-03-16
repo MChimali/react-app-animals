@@ -1,28 +1,15 @@
 import React from "react";
 import { CartContainer } from "pods/shopping-cart";
 import { AppRouter } from "./router/app.router";
-import { makeStyles } from "@material-ui/core/styles";
-import { CartItemsProvider } from "./core/cart-items.context";
-
-const useStyles = makeStyles(() => ({
-  flexContainer: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "stretch",
-    alignContent: "stretch",
-  },
-  text: { display: "inline-block" },
-}));
+import { CartListProvider } from "./core/cart-items.context";
+import { CartFlagProvider } from "core/cart-flag.context";
 
 export const App = () => {
-  const classes = useStyles();
-
   return (
-    <CartItemsProvider>
-      <div className={classes.flexContainer}>
+    <CartListProvider>
+      <CartFlagProvider>
         <AppRouter />
-        <CartContainer />
-      </div>
-    </CartItemsProvider>
+      </CartFlagProvider>
+    </CartListProvider>
   );
 };

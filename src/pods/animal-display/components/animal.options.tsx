@@ -2,7 +2,7 @@ import React from "react";
 import { PictureInfo } from "../api/api.model";
 import { makeStyles } from "@material-ui/core/styles";
 import { CheckBox } from "./input.checkbox.animal";
-import { cartFlagContext } from "../../../core/cart-items.context";
+import { cartListContext } from "../../../core/cart-items.context";
 
 const useStyles = makeStyles(() => ({
   flexContainer: {
@@ -22,7 +22,7 @@ interface Props {
 }
 
 export const AnimalOptions: React.FC<Props> = (props) => {
-  const { cartList, setCartList } = React.useContext(cartFlagContext);
+  const { cartList, setCartList } = React.useContext(cartListContext);
   const { list } = props;
   const classes = useStyles();
   console.log(cartList)

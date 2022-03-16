@@ -1,6 +1,6 @@
 import React from "react";
 import { PictureInfo } from "../api/api.model";
-import { cartFlagContext } from "../../../core/cart-items.context";
+import { cartListContext } from "../../../core/cart-items.context";
 
 interface Props {
   animal: PictureInfo;
@@ -8,7 +8,7 @@ interface Props {
 }
 export const CheckBox: React.FC<Props> = (props) => {
   const { animal, flag } = props;
-  const { cartList, setCartList } = React.useContext(cartFlagContext);
+  const { cartList, setCartList } = React.useContext(cartListContext);
   const [carted, setCarted] = React.useState(flag);
 
   const handleChecked = () => {

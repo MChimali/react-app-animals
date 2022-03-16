@@ -1,20 +1,20 @@
 import React from "react";
 import { PictureInfo } from "./mock.data";
 
-interface CartContext {
+interface CartListContext {
   cartList: PictureInfo[];
   setCartList: (list: PictureInfo[]) => void;
 }
 
-export const cartFlagContext = React.createContext<CartContext>(null);
+export const cartListContext = React.createContext<CartListContext>(null);
 
-export const CartItemsProvider: React.FC = (props) => {
+export const CartListProvider: React.FC = (props) => {
   const { children } = props;
   const [cartList, setCartList] = React.useState<PictureInfo[]>([]);
 
   return (
-    <cartFlagContext.Provider value={{ cartList, setCartList }}>
+    <cartListContext.Provider value={{ cartList, setCartList }}>
       {children}
-    </cartFlagContext.Provider>
+    </cartListContext.Provider>
   );
 };
