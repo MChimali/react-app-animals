@@ -7,7 +7,7 @@ import { cartListContext } from "../../../core/cart-items.context";
 const useStyles = makeStyles(() => ({
   flexContainer: {
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "stretch",
     alignContent: "stretch",
   },
