@@ -6,7 +6,12 @@ import { cartFlagContext } from "core/cart-flag.context";
 
 const useStyles = makeStyles(() => ({
   link: { margin: "0.8rem" },
-  linkHeader: { background: "#CFD5FB", padding: "1em", display: "flex", justifyContent:"space-between" },
+  linkHeader: {
+    background: "#CFD5FB",
+    padding: "1em",
+    display: "flex",
+    justifyContent: "space-between",
+  },
 }));
 
 export const Header = () => {
@@ -18,18 +23,16 @@ export const Header = () => {
   };
 
   return (
-    <>
-      <div className={classes.linkHeader}>
-        <div>
-          <button onClick={() => handleNavigate("cats")}>ir a gatitos</button>
-          <button onClick={() => handleNavigate("dogs")}>ir a perritos</button>
-        </div>
-        <div>
-          <button onClick={() => setCartFlag(!cartFlag)}>
-            {cartFlag ? "hide cart" : "display cart"}
-          </button>
-        </div>
+    <div className={classes.linkHeader}>
+      <div>
+        <button onClick={() => handleNavigate("cats")}>ir a gatitos</button>
+        <button onClick={() => handleNavigate("dogs")}>ir a perritos</button>
       </div>
-    </>
+      <div>
+        <button onClick={() => setCartFlag(!cartFlag)}>
+          {cartFlag ? "hide cart" : "display cart"}
+        </button>
+      </div>
+    </div>
   );
 };

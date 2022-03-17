@@ -10,12 +10,12 @@ export const CheckBox: React.FC<Props> = (props) => {
   const { animal, flag } = props;
   const { cartList, setCartList } = React.useContext(cartListContext);
   const [carted, setCarted] = React.useState(flag);
-  console.log(animal.title, carted)
+  console.log(animal.title, carted);
 
   React.useEffect(() => {
-    if(!cartList.some((item) => item.title === animal.title)){
-      setCarted(false)
-    }  
+    if (!cartList.some((item) => item.title === animal.title)) {
+      setCarted(false);
+    }
   }, [cartList]);
 
   const handleChecked = () => {
@@ -32,13 +32,11 @@ export const CheckBox: React.FC<Props> = (props) => {
   };
 
   return (
-    <>
-      <input
-        key={animal.id}
-        type="checkbox"
-        checked={carted}
-        onChange={handleChecked}
-      ></input>
-    </>
+    <input
+      key={animal.id}
+      type="checkbox"
+      checked={carted}
+      onChange={handleChecked}
+    ></input>
   );
 };

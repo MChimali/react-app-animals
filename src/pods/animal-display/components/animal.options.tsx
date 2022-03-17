@@ -27,22 +27,20 @@ export const AnimalOptions: React.FC<Props> = (props) => {
   const classes = useStyles();
 
   return (
-    <>
-      <div className={classes.flexContainer}>
-        {list.map((item) => (
-          <div className={classes.card} key={item.id}>
-            <img src={item.picUrl} style={{ width: "7rem" }} />
-            <div>{item.title}</div>
+    <div className={classes.flexContainer}>
+      {list.map((item) => (
+        <div className={classes.card} key={item.id}>
+          <img src={item.picUrl} style={{ width: "7rem" }} />
+          <div>{item.title}</div>
 
-            <CheckBox
-              key={item.title}
-              animal={item}
-              flag={cartList.some((el) => el.title === item.title)}
-            />
-            {/* {console.log("vamos a ver",cartList.some((el) => el.title === item.title))} */}
-          </div>
-        ))}
-      </div>
-    </>
+          <CheckBox
+            key={item.title}
+            animal={item}
+            flag={cartList.some((el) => el.title === item.title)}
+          />
+          {/* {console.log("vamos a ver",cartList.some((el) => el.title === item.title))} */}
+        </div>
+      ))}
+    </div>
   );
 };

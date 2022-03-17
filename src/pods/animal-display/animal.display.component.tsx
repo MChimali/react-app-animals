@@ -16,10 +16,8 @@ export const AnimalDisplayComponent: React.FC<Props> = (props) => {
   const classes = useStyles();
 
   return (
-    <>
-      <div className={classes.flexItems}>
-        <AnimalOptions list={list} />
-      </div>
-    </>
+    <div className={classes.flexItems}>
+      <AnimalOptions list={list} />
+    </div>
   );
 };

@@ -14,9 +14,5 @@ export const AnimalDisplayContainer: React.FC<Props> = (props) => {
     getList(animal).then(setList);
   }, [location.pathname]);
 
-  return (
-    <>
-      <AnimalDisplayComponent list={list}/>
-    </>
-  );
+  return <AnimalDisplayComponent list={list} />;
 };

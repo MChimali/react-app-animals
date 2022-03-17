@@ -18,11 +18,9 @@ export const LinkToLists = () => {
   };
 
   return (
-    <>
-      <div className={classes.linkHeader}>
-        <button onClick={()=>handleNavigate("cats")}>ir a gatitos</button>
-        <button onClick={()=>handleNavigate("dogs")}>ir a perritos</button>
-      </div>
-    </>
+    <div className={classes.linkHeader}>
+      <button onClick={() => handleNavigate("cats")}>ir a gatitos</button>
+      <button onClick={() => handleNavigate("dogs")}>ir a perritos</button>
+    </div>
   );
 };
