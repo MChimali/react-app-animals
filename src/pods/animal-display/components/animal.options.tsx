@@ -33,7 +33,7 @@ export const AnimalOptions: React.FC<Props> = (props) => {
           <div className={classes.card} key={item.id}>
             <img src={item.picUrl} style={{ width: "7rem" }} />
             <div>{item.title}</div>
-            
+
             <CheckBox
               key={item.title}
               animal={item}
